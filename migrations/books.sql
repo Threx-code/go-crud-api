@@ -1,0 +1,11 @@
+create table if not exists books (
+    id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    user_id INT(11) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX(title, (6)),
+    FOREIGN KEY (user_id) REFERENCES `users` (`id`)
+    ON DELETE CASCADE
+)ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
